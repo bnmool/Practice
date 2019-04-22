@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/assets/vendors/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<ul id="pagination-demo" class="pagination-sm"></ul>
+<script src="/static/assets/vendors/jquery/jquery.min.js"></script>
+<script src="/static/assets/vendors/twbs-pagination/jquery.twbsPagination.js"></script>
+
+<script>
+
+    function pagination(totalPages){
+        $('#pagination-demo').twbsPagination('destroy');
+        $('#pagination-demo').twbsPagination({
+            totalPages: totalPages,
+            visiblePages:7,
+            onPageClick:function(event,page){
+                $('#page-content').text('page'+page);
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>
